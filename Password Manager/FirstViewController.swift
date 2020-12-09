@@ -9,6 +9,7 @@
 import UIKit
 
 var list = ["a", "b"]
+var masterPassword = "password"
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var accountTableView: UITableView!

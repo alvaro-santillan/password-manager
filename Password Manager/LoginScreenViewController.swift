@@ -10,9 +10,9 @@ import UIKit
 
 class LoginScreenViewController: UIViewController {
     @IBOutlet weak var unlockButton: UIButton!
+    @IBOutlet weak var passwordEntryTextField: UITextField!
+    @IBOutlet weak var feedBackLabel: UILabel!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +21,12 @@ class LoginScreenViewController: UIViewController {
     
     @IBAction func unlockButtonPressed(_ sender: Any) {
         print("press")
+        
+        if passwordEntryTextField.text != masterPassword {
+            feedBackLabel.text = "Wrong Password, Try Agien"
+        } else {
+            self.performSegue(withIdentifier: "unlockSegue", sender: nil)
+        }
     }
     
     /*
