@@ -80,6 +80,11 @@ class SecondViewController: UIViewController {
         }
     }
     
+    @IBAction func signOutButtonPressed(_ sender: GeneralUIButton) {
+        self.performSegue(withIdentifier: "signOutSegue", sender: nil)
+    }
+    
+    
     func inputValidator(input: String) -> Bool {
         let decimalCharacters = CharacterSet.decimalDigits
         let letterCharacters = CharacterSet.letters
