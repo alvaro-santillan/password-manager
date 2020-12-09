@@ -68,7 +68,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="accountTextFieldPressed:" destination="8rJ-Kc-sve" eventType="editingDidEnd" id="3xO-Qg-f03"/>
+                                    <action selector="accountTextFieldChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="Grp-gp-FVY"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3l-sZ-AVS">
@@ -77,7 +77,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="passwordTextFieldPressed:" destination="8rJ-Kc-sve" eventType="editingDidEnd" id="Nxf-pH-8m0"/>
+                                    <action selector="passwordTextFieldChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="lRR-jd-0B2"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBe-re-Yae" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
