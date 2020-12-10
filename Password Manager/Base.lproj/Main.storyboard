@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLu-wA-bMg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -101,6 +101,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="encriptButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="S3O-QA-LSI"/>
                                     <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="j4Y-0D-J62"/>
                                 </connections>
                             </button>
@@ -136,18 +137,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <action selector="retypeNewPasswordTextFieldPressed:" destination="8rJ-Kc-sve" eventType="editingChanged" id="fSG-RV-RoT"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ln1-Pl-vu2">
                                 <rect key="frame" x="27" y="228" width="320" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <action selector="oldPasswordTextFieldPressed:" destination="8rJ-Kc-sve" eventType="editingChanged" id="KVW-EY-5hs"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zK5-w6-ajA">
                                 <rect key="frame" x="27" y="270" width="320" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <action selector="newPasswordTextFieldPressed:" destination="8rJ-Kc-sve" eventType="editingChanged" id="E6g-cd-mHe"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H5e-14-DKH">
                                 <rect key="frame" x="37" y="415" width="0.0" height="0.0"/>
@@ -176,7 +186,12 @@
                     <connections>
                         <outlet property="accountNameTextField" destination="vhV-hB-EDU" id="6bm-YD-dH6"/>
                         <outlet property="addAccountButton" destination="YBe-re-Yae" id="LLn-2N-LJG"/>
+                        <outlet property="encriptButton" destination="TqK-SC-xJH" id="laT-jQ-th7"/>
+                        <outlet property="newPasswordTextField" destination="zK5-w6-ajA" id="bGX-IQ-PCi"/>
+                        <outlet property="oldPasswordTextField" destination="ln1-Pl-vu2" id="aSM-hz-15S"/>
+                        <outlet property="passwordFeedbackLabel" destination="YxB-I5-hfH" id="YCr-ZA-2Bu"/>
                         <outlet property="passwordTextField" destination="e3l-sZ-AVS" id="gjV-hQ-1Hq"/>
+                        <outlet property="retypeNewPasswordTextField" destination="YcW-QY-KNP" id="TFx-uk-Pwc"/>
                         <segue destination="GLu-wA-bMg" kind="show" identifier="signOutSegue" id="HPf-gl-9sv"/>
                     </connections>
                 </viewController>
@@ -209,7 +224,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="Webroot"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Shield" translatesAutoresizingMaskIntoConstraints="NO" id="BJw-8V-IJ5">
                                 <rect key="frame" x="92" y="103" width="191" height="176"/>

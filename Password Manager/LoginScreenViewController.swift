@@ -24,6 +24,7 @@ class LoginScreenViewController: UIViewController {
         
         if passwordEntryTextField.text != masterPassword {
             feedBackLabel.text = "Wrong Password, Try Agien"
+            passwordEntryTextField.text = nil
         } else {
             self.performSegue(withIdentifier: "unlockSegue", sender: nil)
         }
