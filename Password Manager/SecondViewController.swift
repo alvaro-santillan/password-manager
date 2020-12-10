@@ -61,21 +61,22 @@ class SecondViewController: UIViewController {
         let passwordText = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
         
         if accountText != nil {
-            for i in list {
-                if accountText == i {
-                    print(i, i.count)
-                    list.remove(at: i.count-1)
-                    list.insert(accountText ?? "O no bob", at: i.count-1)
-                    existingAccount = true
-                    passwordTextField.text = nil
-                    accountNameTextField.text = nil
-                    addAccountButton.isEnabled = false
-                    addAccountButton.backgroundColor = UIColor.gray
-                }
-            }
+//            for i in tableViewData {
+//                if ("Username: " + accountText!) == i.sectionData[0] {
+////                    print(i, i.count)
+//                    list.remove(at: i.count-1)
+//                    list.insert(accountText ?? "O no bob", at: i.count-1)
+//                    existingAccount = true
+//                    passwordTextField.text = nil
+//                    accountNameTextField.text = nil
+//                    addAccountButton.isEnabled = false
+//                    addAccountButton.backgroundColor = UIColor.gray
+//                }
+//            }
             
             if existingAccount == false {
-                list.append(accountText ?? "O no bob")
+                let tempCellData = cellData(opened: false, title: accountText ?? "O no bob", sectionData: [accountText!, passwordText!])
+                tableViewData.append(tempCellData)
                 passwordTextField.text = nil
                 accountNameTextField.text = nil
                 addAccountButton.isEnabled = false
