@@ -16,6 +16,8 @@
 		387C807025804A1D0021AB8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387C806E25804A1D0021AB8E /* LaunchScreen.storyboard */; };
 		387C8078258058490021AB8E /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C8077258058480021AB8E /* LoginScreenViewController.swift */; };
 		387C807A258069130021AB8E /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C8079258069130021AB8E /* CustomUI.swift */; };
+		38C22FC52582C7510078D8E1 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */; };
+		38C22FC62582C7510078D8E1 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		387C807125804A1D0021AB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		387C8077258058480021AB8E /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		387C8079258069130021AB8E /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
+		38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				387C806C25804A1D0021AB8E /* Assets.xcassets */,
 				387C806E25804A1D0021AB8E /* LaunchScreen.storyboard */,
 				387C807125804A1D0021AB8E /* Info.plist */,
+				38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */,
+				38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */,
 			);
 			path = "Password Manager";
 			sourceTree = "<group>";
@@ -150,7 +156,9 @@
 				387C806825804A190021AB8E /* SecondViewController.swift in Sources */,
 				38018C772581BE0B0047E241 /* TableViewController.swift in Sources */,
 				387C806225804A190021AB8E /* AppDelegate.swift in Sources */,
+				38C22FC52582C7510078D8E1 /* KeychainWrapper.swift in Sources */,
 				387C8078258058490021AB8E /* LoginScreenViewController.swift in Sources */,
+				38C22FC62582C7510078D8E1 /* KeychainItemAccessibility.swift in Sources */,
 				387C807A258069130021AB8E /* CustomUI.swift in Sources */,
 				387C806425804A190021AB8E /* SceneDelegate.swift in Sources */,
 			);

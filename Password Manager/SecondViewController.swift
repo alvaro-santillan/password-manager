@@ -79,7 +79,7 @@ class SecondViewController: UIViewController {
     var passwordVirificationPassed: Bool = false
     
     @IBAction func oldPasswordTextFieldPressed(_ sender: UITextField) {
-        if oldPasswordTextField.text == masterPassword {
+        if oldPasswordTextField.text == KeychainWrapper.standard.string(forKey: "Password") || KeychainWrapper.standard.string(forKey: "Password") == nil {
             oldPasswordPassed = true
             oldPasswordTextField.layer.borderWidth = 1
             oldPasswordTextField.layer.borderColor = UIColor.green.cgColor
@@ -144,7 +144,8 @@ class SecondViewController: UIViewController {
     @IBAction func encriptButtonPressed(_ sender: GeneralUIButton) {
         if canChangePassword() == true {
             let newPassword = newPasswordTextField.text?.trimmingCharacters(in: .whitespaces)
-            masterPassword = newPassword!
+            KeychainWrapper.standard.set(newPassword!, forKey: "Password")
+//            masterPassword = newPassword!
             encriptButton.isEnabled = false
             encriptButton.backgroundColor = UIColor.gray
             oldPasswordTextField.text = nil

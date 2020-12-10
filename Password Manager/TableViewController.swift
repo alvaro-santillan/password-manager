@@ -14,7 +14,7 @@ struct cellData {
     var sectionData = [String]()
 }
 
-var masterPassword = "password"
+//var masterPassword = "password"
 var tableViewData = [cellData(opened: false, title: "Amazon", sectionData: ["Username: timApple@icload.com", "Password: aAppleADay"]),
                  cellData(opened: false, title: "B", sectionData: ["A", "B"]),
                  cellData(opened: false, title: "C", sectionData: ["A", "B"]),

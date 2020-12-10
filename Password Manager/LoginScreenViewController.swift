@@ -19,13 +19,17 @@ class LoginScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
     @IBAction func unlockButtonPressed(_ sender: Any) {
-        print("press")
+        print(KeychainWrapper.standard.string(forKey: "Password"))
         
-        if passwordEntryTextField.text != masterPassword {
+        if KeychainWrapper.standard.string(forKey: "Password") == nil {
+            self.performSegue(withIdentifier: "unlockSegue", sender: nil)
+        } else if passwordEntryTextField.text != KeychainWrapper.standard.string(forKey: "Password") {
             feedBackLabel.text = "Wrong Password, Try Agien"
             passwordEntryTextField.text = nil
         } else {
+//            masterPassword = KeychainWrapper.standard.string(forKey: "Password") ?? ""
             self.performSegue(withIdentifier: "unlockSegue", sender: nil)
         }
     }
