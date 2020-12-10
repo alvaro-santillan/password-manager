@@ -18,6 +18,7 @@
 		387C807A258069130021AB8E /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C8079258069130021AB8E /* CustomUI.swift */; };
 		38C22FC52582C7510078D8E1 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */; };
 		38C22FC62582C7510078D8E1 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */; };
+		38C22FC82582D0A10078D8E1 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		387C8079258069130021AB8E /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
 		38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				38018C762581BE0B0047E241 /* TableViewController.swift */,
 				387C806725804A190021AB8E /* SecondViewController.swift */,
 				387C806925804A190021AB8E /* Main.storyboard */,
+				38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */,
 				387C8079258069130021AB8E /* CustomUI.swift */,
 				387C8077258058480021AB8E /* LoginScreenViewController.swift */,
 				387C806C25804A1D0021AB8E /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 				38C22FC62582C7510078D8E1 /* KeychainItemAccessibility.swift in Sources */,
 				387C807A258069130021AB8E /* CustomUI.swift in Sources */,
 				387C806425804A190021AB8E /* SceneDelegate.swift in Sources */,
+				38C22FC82582D0A10078D8E1 /* NewPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
