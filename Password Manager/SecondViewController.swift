@@ -10,7 +10,9 @@ import UIKit
 
 class SecondViewController: UIViewController {
     @IBOutlet weak var accountNameTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var addAccountButton: GeneralUIButton!
     @IBOutlet weak var oldPasswordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
@@ -27,37 +29,23 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func accountTextFieldChanged(_ sender: UITextField) {
-        // Remove leading and trailing whitespaces:
-        let accountText = accountNameTextField.text?.trimmingCharacters(in: .whitespaces)
-        let passwordText = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
-
-        if inputValidator(input: accountText ?? "") != false && inputValidator(input: passwordText ?? "") != false {
-            addAccountButton.isEnabled = true
-            addAccountButton.backgroundColor = UIColor(named: "Webroot")
-        } else {
-            addAccountButton.isEnabled = false
-            addAccountButton.backgroundColor = UIColor.gray
-        }
+        newAccountManager()
+    }
+    
+    @IBAction func usernameTextFieldChanged(_ sender: UITextField) {
+        newAccountManager()
     }
     
     @IBAction func passwordTextFieldChanged(_ sender: UITextField) {
-        // Remove leading and trailing whitespaces:
-        let accountText = accountNameTextField.text?.trimmingCharacters(in: .whitespaces)
-        let passwordText = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
-
-        if inputValidator(input: accountText ?? "") != false && inputValidator(input: passwordText ?? "") != false {
-            addAccountButton.isEnabled = true
-            addAccountButton.backgroundColor = UIColor(named: "Webroot")
-        } else {
-            addAccountButton.isEnabled = false
-            addAccountButton.backgroundColor = UIColor.gray
-        }
+        newAccountManager()
     }
+    
     
     @IBAction func addAccountButtonPressed(_ sender: GeneralUIButton) {
         var existingAccount = false
         // Remove leading and trailing whitespaces:
         let accountText = accountNameTextField.text?.trimmingCharacters(in: .whitespaces)
+        let usernameText = userNameTextField.text?.trimmingCharacters(in: .whitespaces)
         let passwordText = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
         
         if accountText != nil {
@@ -75,10 +63,11 @@ class SecondViewController: UIViewController {
 //            }
             
             if existingAccount == false {
-                let tempCellData = cellData(opened: false, title: accountText ?? "O no bob", sectionData: [accountText!, passwordText!])
+                let tempCellData = cellData(opened: false, title: accountText ?? "O no bob", sectionData: [("Username: " + usernameText!), ("Password: " + passwordText!)])
                 tableViewData.append(tempCellData)
-                passwordTextField.text = nil
                 accountNameTextField.text = nil
+                userNameTextField.text = nil
+                passwordTextField.text = nil
                 addAccountButton.isEnabled = false
                 addAccountButton.backgroundColor = UIColor.gray
             }
@@ -167,6 +156,21 @@ class SecondViewController: UIViewController {
         }
     }
     
+    func newAccountManager() {
+        // Remove leading and trailing whitespaces:
+        let accountText = accountNameTextField.text?.trimmingCharacters(in: .whitespaces)
+        let usernameText = userNameTextField.text?.trimmingCharacters(in: .whitespaces)
+        let passwordText = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
+
+        if inputValidator(input: accountText ?? "") != false && inputValidator(input: passwordText ?? "") != false && inputValidator(input: usernameText ?? "") != false {
+            addAccountButton.isEnabled = true
+            addAccountButton.backgroundColor = UIColor(named: "Webroot")
+        } else {
+            addAccountButton.isEnabled = false
+            addAccountButton.backgroundColor = UIColor.gray
+        }
+    }
+    
     func canChangePassword() -> Bool {
         if oldPasswordPassed && newPasswordPassed && passwordVirificationPassed {
             return true
@@ -196,10 +200,10 @@ class SecondViewController: UIViewController {
         let letterRange = input.rangeOfCharacter(from: letterCharacters)
         
         if letterRange != nil || decimalRange != nil {
-            print("found")
+//            print("found")
             return true
         } else {
-            print("not")
+//            print("not")
             return false
         }
     }

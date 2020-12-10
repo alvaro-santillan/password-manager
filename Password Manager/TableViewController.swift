@@ -16,9 +16,9 @@ struct cellData {
 
 var masterPassword = "password"
 var tableViewData = [cellData(opened: false, title: "Amazon", sectionData: ["Username: timApple@icload.com", "Password: aAppleADay"]),
-                 cellData(opened: false, title: "Title", sectionData: ["A", "B"]),
-                 cellData(opened: false, title: "Title", sectionData: ["A", "B"]),
-                 cellData(opened: false, title: "Title", sectionData: ["A", "B"])]
+                 cellData(opened: false, title: "B", sectionData: ["A", "B"]),
+                 cellData(opened: false, title: "C", sectionData: ["A", "B"]),
+                 cellData(opened: false, title: "D", sectionData: ["A", "B"])]
 
 class TableViewController: UITableViewController {
     @IBOutlet weak var newTableView: UITableView!
@@ -63,6 +63,14 @@ class TableViewController: UITableViewController {
                 let sections = IndexSet.init(integer: indexPath.section)
                 tableView.reloadSections(sections, with: .none)
             }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+//            print(indexPath[0])
+            tableViewData.remove(at: indexPath[0])
+            newTableView.reloadData()
         }
     }
     
