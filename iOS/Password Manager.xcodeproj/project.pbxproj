@@ -21,6 +21,7 @@
 		38C22FC82582D0A10078D8E1 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */; };
 		38C22FCA2582F3700078D8E1 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */; };
 		38C22FCC2582FB550078D8E1 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FCB2582FB550078D8E1 /* AboutMeViewController.swift */; };
+		38CEE60925841B7B00A79E08 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CEE60825841B7B00A79E08 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		38C22FCB2582FB550078D8E1 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		38CEE60825841B7B00A79E08 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		38C22FCF258329570078D8E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				38CEE60825841B7B00A79E08 /* Extensions.swift */,
 				387C8079258069130021AB8E /* CustomUI.swift */,
 				38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */,
 				38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */,
@@ -197,6 +200,7 @@
 				387C806425804A190021AB8E /* SceneDelegate.swift in Sources */,
 				38C22FC82582D0A10078D8E1 /* NewPasswordViewController.swift in Sources */,
 				38C22FCC2582FB550078D8E1 /* AboutMeViewController.swift in Sources */,
+				38CEE60925841B7B00A79E08 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

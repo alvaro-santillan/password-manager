@@ -9,7 +9,7 @@
 import UIKit
 import LocalAuthentication
 
-class LoginScreenViewController: UIViewController {
+class LoginScreenViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet weak var passwordEntryTextField: UITextField!
     @IBOutlet weak var feedBackLabel: UILabel!
@@ -17,7 +17,15 @@ class LoginScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         checkIfBiometricsAreEnabled()
+        
+        self.passwordEntryTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func checkIfBiometricsAreEnabled() {

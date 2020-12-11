@@ -9,7 +9,7 @@
 import UIKit
 
 // To-do: Should sign out when switched to another app.
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var oldPasswordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var retypeNewPasswordTextField: UITextField!
@@ -22,8 +22,18 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         changePasswordButton.isEnabled = false
         changePasswordButton.backgroundColor = UIColor.gray
+        
+        self.oldPasswordTextField.delegate = self
+        self.newPasswordTextField.delegate = self
+        self.retypeNewPasswordTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func oldPasswordTextFieldPressed(_ sender: UITextField) {

@@ -20,7 +20,7 @@ var tableViewData = [cellData(opened: false, title: "Amazon", sectionData: ["Use
                     cellData(opened: false, title: "OpenText", sectionData: ["Username: david@opentext.com", "Password: dSdsjkfDHS1334!"]),
                     cellData(opened: false, title: "Carbonite", sectionData: ["Username: al@carbonite.com", "Password: AlIsTheBestGuy100%"])]
 
-class AccountViewController: UITableViewController {
+class AccountViewController: UITableViewController  {
     @IBOutlet weak var newTableView: UITableView!
 
     override func viewDidLoad() {

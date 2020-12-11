@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddAccountViewController: UIViewController {
+class AddAccountViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var accountNameTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -16,8 +16,18 @@ class AddAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         addAccountButton.isEnabled = false
         addAccountButton.backgroundColor = UIColor.gray
+        
+        self.accountNameTextField.delegate = self
+        self.userNameTextField.delegate = self
+        self.passwordTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func newAccountManager() {

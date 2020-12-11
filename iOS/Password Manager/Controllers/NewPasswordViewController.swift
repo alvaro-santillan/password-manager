@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewPasswordViewController: UIViewController {
+class NewPasswordViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var retypeNewPasswordTextField: UITextField!
     @IBOutlet weak var passwordFeedbackLabel: UILabel!
@@ -19,6 +19,15 @@ class NewPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        
+        self.newPasswordTextField.delegate = self
+        self.retypeNewPasswordTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     // To-do: Should probilby fail user if spaces are used in the new password.
