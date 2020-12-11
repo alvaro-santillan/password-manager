@@ -11,7 +11,7 @@
         <!--Accounts-->
         <scene sceneID="n7q-VE-8vO">
             <objects>
-                <tableViewController id="J0A-Jq-mzi" customClass="TableViewController" customModule="Password_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="J0A-Jq-mzi" customClass="AccountViewController" customModule="Password_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pap-MS-uli">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,7 +371,7 @@
         <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Password_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="8rJ-Kc-sve" customClass="SettingsViewController" customModule="Password_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -617,6 +617,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fnl-ow-gpw"/>
+        <segue reference="HPf-gl-9sv"/>
     </inferredMetricsTieBreakers>
 </document>

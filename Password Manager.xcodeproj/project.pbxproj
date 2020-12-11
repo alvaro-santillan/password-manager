@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38018C772581BE0B0047E241 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38018C762581BE0B0047E241 /* TableViewController.swift */; };
+		38018C772581BE0B0047E241 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38018C762581BE0B0047E241 /* AccountViewController.swift */; };
 		387C806225804A190021AB8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C806125804A190021AB8E /* AppDelegate.swift */; };
 		387C806425804A190021AB8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C806325804A190021AB8E /* SceneDelegate.swift */; };
-		387C806825804A190021AB8E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C806725804A190021AB8E /* SecondViewController.swift */; };
+		387C806825804A190021AB8E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C806725804A190021AB8E /* SettingsViewController.swift */; };
 		387C806B25804A190021AB8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387C806925804A190021AB8E /* Main.storyboard */; };
 		387C806D25804A1D0021AB8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 387C806C25804A1D0021AB8E /* Assets.xcassets */; };
 		387C807025804A1D0021AB8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387C806E25804A1D0021AB8E /* LaunchScreen.storyboard */; };
@@ -24,11 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		38018C762581BE0B0047E241 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		38018C762581BE0B0047E241 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		387C805E25804A190021AB8E /* Password Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		387C806125804A190021AB8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		387C806325804A190021AB8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		387C806725804A190021AB8E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		387C806725804A190021AB8E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		387C806A25804A190021AB8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		387C806C25804A1D0021AB8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		387C806F25804A1D0021AB8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,21 +74,45 @@
 			children = (
 				387C806125804A190021AB8E /* AppDelegate.swift */,
 				387C806325804A190021AB8E /* SceneDelegate.swift */,
-				38018C762581BE0B0047E241 /* TableViewController.swift */,
-				387C806725804A190021AB8E /* SecondViewController.swift */,
-				38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */,
-				387C806925804A190021AB8E /* Main.storyboard */,
-				38C22FCB2582FB550078D8E1 /* AboutMeViewController.swift */,
-				38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */,
-				387C8079258069130021AB8E /* CustomUI.swift */,
-				387C8077258058480021AB8E /* LoginScreenViewController.swift */,
+				38C22FCD2583278F0078D8E1 /* Controllers */,
+				38C22FCE258329350078D8E1 /* Views */,
 				387C806C25804A1D0021AB8E /* Assets.xcassets */,
-				387C806E25804A1D0021AB8E /* LaunchScreen.storyboard */,
 				387C807125804A1D0021AB8E /* Info.plist */,
+				38C22FCF258329570078D8E1 /* Model */,
+			);
+			path = "Password Manager";
+			sourceTree = "<group>";
+		};
+		38C22FCD2583278F0078D8E1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				387C8077258058480021AB8E /* LoginScreenViewController.swift */,
+				38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */,
+				38018C762581BE0B0047E241 /* AccountViewController.swift */,
+				38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */,
+				38C22FCB2582FB550078D8E1 /* AboutMeViewController.swift */,
+				387C806725804A190021AB8E /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		38C22FCE258329350078D8E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				387C806925804A190021AB8E /* Main.storyboard */,
+				387C806E25804A1D0021AB8E /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		38C22FCF258329570078D8E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				387C8079258069130021AB8E /* CustomUI.swift */,
 				38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */,
 				38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */,
 			);
-			path = "Password Manager";
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +186,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				387C806825804A190021AB8E /* SecondViewController.swift in Sources */,
-				38018C772581BE0B0047E241 /* TableViewController.swift in Sources */,
+				387C806825804A190021AB8E /* SettingsViewController.swift in Sources */,
+				38018C772581BE0B0047E241 /* AccountViewController.swift in Sources */,
 				38C22FCA2582F3700078D8E1 /* AddAccountViewController.swift in Sources */,
 				387C806225804A190021AB8E /* AppDelegate.swift in Sources */,
 				38C22FC52582C7510078D8E1 /* KeychainWrapper.swift in Sources */,

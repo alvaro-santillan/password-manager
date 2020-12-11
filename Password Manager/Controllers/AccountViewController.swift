@@ -20,7 +20,7 @@ var tableViewData = [cellData(opened: false, title: "Amazon", sectionData: ["Use
                  cellData(opened: false, title: "C", sectionData: ["A", "B"]),
                  cellData(opened: false, title: "D", sectionData: ["A", "B"])]
 
-class TableViewController: UITableViewController {
+class AccountViewController: UITableViewController {
     @IBOutlet weak var newTableView: UITableView!
     
 
