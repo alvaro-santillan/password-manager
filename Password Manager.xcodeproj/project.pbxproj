@@ -20,6 +20,7 @@
 		38C22FC62582C7510078D8E1 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */; };
 		38C22FC82582D0A10078D8E1 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */; };
 		38C22FCA2582F3700078D8E1 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */; };
+		38C22FCC2582FB550078D8E1 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FCB2582FB550078D8E1 /* AboutMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		38C22FCB2582FB550078D8E1 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				387C806725804A190021AB8E /* SecondViewController.swift */,
 				38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */,
 				387C806925804A190021AB8E /* Main.storyboard */,
+				38C22FCB2582FB550078D8E1 /* AboutMeViewController.swift */,
 				38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */,
 				387C8079258069130021AB8E /* CustomUI.swift */,
 				387C8077258058480021AB8E /* LoginScreenViewController.swift */,
@@ -169,6 +172,7 @@
 				387C807A258069130021AB8E /* CustomUI.swift in Sources */,
 				387C806425804A190021AB8E /* SceneDelegate.swift in Sources */,
 				38C22FC82582D0A10078D8E1 /* NewPasswordViewController.swift in Sources */,
+				38C22FCC2582FB550078D8E1 /* AboutMeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

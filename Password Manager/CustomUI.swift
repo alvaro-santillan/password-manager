@@ -17,3 +17,10 @@ class GeneralUIButton: UIButton {
         self.imageView?.contentMode = .scaleAspectFit
     }
 }
+
+class TextUIButton: GeneralUIButton {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.shadowOpacity = 0.2
+    }
+}
