@@ -12,10 +12,9 @@ class AboutMeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    // Determins what URL to use.
     func urlSelector(webURL: String, appURL: String) {
         var selectedURL = String()
         UIApplication.shared.canOpenURL(URL(string: appURL)! as URL) ? (selectedURL = appURL) : (selectedURL = webURL)
@@ -52,15 +51,4 @@ class AboutMeViewController: UIViewController {
         
         urlSelector(webURL: webURL, appURL: appURL)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

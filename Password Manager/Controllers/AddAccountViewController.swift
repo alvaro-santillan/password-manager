@@ -8,6 +8,7 @@
 
 import UIKit
 
+// To-do disable auto segestions in input fields.
 class AddAccountViewController: UIViewController {
     @IBOutlet weak var accountNameTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
@@ -18,6 +19,30 @@ class AddAccountViewController: UIViewController {
         super.viewDidLoad()
         addAccountButton.isEnabled = false
         addAccountButton.backgroundColor = UIColor.gray
+    }
+    
+    func newAccountManager() {
+        // Remove leading and trailing whitespaces.
+        let accountText = accountNameTextField.text?.trimmingCharacters(in: .whitespaces)
+        let usernameText = userNameTextField.text?.trimmingCharacters(in: .whitespaces)
+        let passwordText = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
+
+        // Handle adding a new account.
+        if inputValidator(input: accountText ?? "") != false && inputValidator(input: passwordText ?? "") != false && inputValidator(input: usernameText ?? "") != false {
+            addAccountButton.isEnabled = true
+            addAccountButton.backgroundColor = UIColor(named: "Webroot")
+        } else {
+            addAccountButton.isEnabled = false
+            addAccountButton.backgroundColor = UIColor.gray
+        }
+    }
+    
+    // Make sure password contains letters or numbers.
+    func inputValidator(input: String) -> Bool {
+        let decimalRange = input.rangeOfCharacter(from: CharacterSet.decimalDigits)
+        let letterRange = input.rangeOfCharacter(from: CharacterSet.letters)
+        
+        return (letterRange != nil || decimalRange != nil) ? true : false
     }
     
     @IBAction func accountTextFieldChanged(_ sender: UITextField) {
@@ -33,65 +58,22 @@ class AddAccountViewController: UIViewController {
     }
     
     @IBAction func addAccountButtonPressed(_ sender: GeneralUIButton) {
-        var existingAccount = false
         // Remove leading and trailing whitespaces:
         let accountText = accountNameTextField.text?.trimmingCharacters(in: .whitespaces)
         let usernameText = userNameTextField.text?.trimmingCharacters(in: .whitespaces)
         let passwordText = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
         
         if accountText != nil {
-//            for i in tableViewData {
-//                if ("Username: " + accountText!) == i.sectionData[0] {
-////                    print(i, i.count)
-//                    list.remove(at: i.count-1)
-//                    list.insert(accountText ?? "O no bob", at: i.count-1)
-//                    existingAccount = true
-//                    passwordTextField.text = nil
-//                    accountNameTextField.text = nil
-//                    addAccountButton.isEnabled = false
-//                    addAccountButton.backgroundColor = UIColor.gray
-//                }
-//            }
+            // Create and add a new cell.
+            let newCellData = cellData(opened: false, title: accountText!, sectionData: [("Username: " + usernameText!), ("Password: " + passwordText!)])
+            tableViewData.append(newCellData)
             
-            if existingAccount == false {
-                let tempCellData = cellData(opened: false, title: accountText ?? "O no bob", sectionData: [("Username: " + usernameText!), ("Password: " + passwordText!)])
-                tableViewData.append(tempCellData)
-                accountNameTextField.text = nil
-                userNameTextField.text = nil
-                passwordTextField.text = nil
-                addAccountButton.isEnabled = false
-                addAccountButton.backgroundColor = UIColor.gray
-            }
-        }
-    }
-    
-    func newAccountManager() {
-        // Remove leading and trailing whitespaces:
-        let accountText = accountNameTextField.text?.trimmingCharacters(in: .whitespaces)
-        let usernameText = userNameTextField.text?.trimmingCharacters(in: .whitespaces)
-        let passwordText = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
-
-        if inputValidator(input: accountText ?? "") != false && inputValidator(input: passwordText ?? "") != false && inputValidator(input: usernameText ?? "") != false {
-            addAccountButton.isEnabled = true
-            addAccountButton.backgroundColor = UIColor(named: "Webroot")
-        } else {
+            // Reset the UI.
+            accountNameTextField.text = nil
+            userNameTextField.text = nil
+            passwordTextField.text = nil
             addAccountButton.isEnabled = false
             addAccountButton.backgroundColor = UIColor.gray
-        }
-    }
-    
-    func inputValidator(input: String) -> Bool {
-        let decimalCharacters = CharacterSet.decimalDigits
-        let letterCharacters = CharacterSet.letters
-        let decimalRange = input.rangeOfCharacter(from: decimalCharacters)
-        let letterRange = input.rangeOfCharacter(from: letterCharacters)
-        
-        if letterRange != nil || decimalRange != nil {
-//            print("found")
-            return true
-        } else {
-//            print("not")
-            return false
         }
     }
 }

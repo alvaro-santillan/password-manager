@@ -17,33 +17,16 @@ class LoginScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(KeychainWrapper.standard.string(forKey: "Password"))
-        
+        checkIfBiometricsAreEnabled()
+    }
+    
+    func checkIfBiometricsAreEnabled() {
         let context = LAContext()
         var error: NSError?
         
+        // If no biometrics on the phone desable the biomentrics unlock button.
         if !(context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)) {
-            // no biometrics on phone desable bio button
             bioUnlockButton.isHidden = true
-        }
-    }
-    
-    @IBAction func unlockButtonPressed(_ sender: Any) {
-        if KeychainWrapper.standard.string(forKey: "Password") == nil {
-            self.performSegue(withIdentifier: "newPasswordSegue", sender: nil)
-        } else if passwordEntryTextField.text != KeychainWrapper.standard.string(forKey: "Password") {
-            feedBackLabel.text = "Wrong Password, Try Agien"
-            passwordEntryTextField.text = nil
-        } else {
-            self.performSegue(withIdentifier: "unlockSegue", sender: nil)
-        }
-    }
-    
-    @IBAction func bioUnlockButtonPressed(_ sender: GeneralUIButton) {
-        if KeychainWrapper.standard.string(forKey: "Password") == nil {
-            self.performSegue(withIdentifier: "newPasswordSegue", sender: nil)
-        } else {
-            unlockUsingBiometrics()
         }
     }
     
@@ -61,11 +44,30 @@ class LoginScreenViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    @IBAction func unlockButtonPressed(_ sender: Any) {
+        if KeychainWrapper.standard.string(forKey: "Password") == nil {
+            // First run setup new password.
+            self.performSegue(withIdentifier: "newPasswordSegue", sender: nil)
+        } else if passwordEntryTextField.text != KeychainWrapper.standard.string(forKey: "Password") {
+            // Password failed
+            feedBackLabel.text = "Wrong Password, Try Agien"
+            passwordEntryTextField.text = nil
         } else {
-            // no biometrics on phone
-            let ac = UIAlertController(title: "Bio unavaliable", message: "not avalable on your phone", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
+            // Password passed
+            self.performSegue(withIdentifier: "unlockSegue", sender: nil)
+        }
+    }
+    
+    @IBAction func bioUnlockButtonPressed(_ sender: GeneralUIButton) {
+        if KeychainWrapper.standard.string(forKey: "Password") == nil {
+            // First run setup new password.
+            self.performSegue(withIdentifier: "newPasswordSegue", sender: nil)
+        } else {
+            // Password passed
+            unlockUsingBiometrics()
         }
     }
 }

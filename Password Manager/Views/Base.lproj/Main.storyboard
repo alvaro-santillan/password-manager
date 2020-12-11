@@ -261,11 +261,11 @@
                                     <constraint firstAttribute="height" constant="60" id="YVO-mI-bdr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <state key="normal" title="Encript">
+                                <state key="normal" title="Set Password">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="encriptButtonPressed:" destination="L9m-iU-cyf" eventType="touchUpInside" id="FwB-ce-ARp"/>
+                                    <action selector="setPasswordButtonPressed:" destination="L9m-iU-cyf" eventType="touchUpInside" id="FwB-ce-ARp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At least 8 characters." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvg-yA-BgQ">
@@ -357,10 +357,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="TwC-gO-wG4"/>
                     <connections>
-                        <outlet property="encriptButton" destination="3sC-Sd-h0D" id="ksN-58-klk"/>
                         <outlet property="newPasswordTextField" destination="kEU-Pj-ICK" id="Ndl-nU-vfl"/>
                         <outlet property="passwordFeedbackLabel" destination="zvg-yA-BgQ" id="lc8-rq-rSY"/>
                         <outlet property="retypeNewPasswordTextField" destination="96q-K0-L0n" id="E9H-AG-YFl"/>
+                        <outlet property="setPasswordButton" destination="3sC-Sd-h0D" id="ksN-58-klk"/>
                         <segue destination="GLu-wA-bMg" kind="show" identifier="firstPasswordSetSegue" id="Fnl-ow-gpw"/>
                     </connections>
                 </viewController>
@@ -419,12 +419,12 @@
                                 <rect key="frame" x="20" y="349" width="280" height="60"/>
                                 <color key="backgroundColor" name="Webroot"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <state key="normal" title="Encript">
+                                <state key="normal" title="Update Password">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="encriptButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="S3O-QA-LSI"/>
                                     <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="j4Y-0D-J62"/>
+                                    <action selector="updatePasswordButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="S3O-QA-LSI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEM-IF-HVt" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
@@ -472,7 +472,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="encriptButton" destination="TqK-SC-xJH" id="laT-jQ-th7"/>
+                        <outlet property="changePasswordButton" destination="TqK-SC-xJH" id="laT-jQ-th7"/>
                         <outlet property="newPasswordTextField" destination="zK5-w6-ajA" id="bGX-IQ-PCi"/>
                         <outlet property="oldPasswordTextField" destination="ln1-Pl-vu2" id="aSM-hz-15S"/>
                         <outlet property="passwordFeedbackLabel" destination="YxB-I5-hfH" id="YCr-ZA-2Bu"/>

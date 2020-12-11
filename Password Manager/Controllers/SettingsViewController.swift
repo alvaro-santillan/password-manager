@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  SettingsViewController.swift
 //  Password Manager
 //
 //  Created by Álvaro Santillan on 12/8/20.
@@ -8,22 +8,23 @@
 
 import UIKit
 
+// To-do: Should sign out when switched to another app.
 class SettingsViewController: UIViewController {
     @IBOutlet weak var oldPasswordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var retypeNewPasswordTextField: UITextField!
     @IBOutlet weak var passwordFeedbackLabel: UILabel!
-    @IBOutlet weak var encriptButton: GeneralUIButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        encriptButton.isEnabled = false
-        encriptButton.backgroundColor = UIColor.gray
-    }
+    @IBOutlet weak var changePasswordButton: GeneralUIButton!
     
     var oldPasswordPassed: Bool = false
     var newPasswordPassed: Bool = false
     var passwordVirificationPassed: Bool = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        changePasswordButton.isEnabled = false
+        changePasswordButton.backgroundColor = UIColor.gray
+    }
     
     @IBAction func oldPasswordTextFieldPressed(_ sender: UITextField) {
         if oldPasswordTextField.text == KeychainWrapper.standard.string(forKey: "Password") || KeychainWrapper.standard.string(forKey: "Password") == nil {
@@ -37,13 +38,17 @@ class SettingsViewController: UIViewController {
             oldPasswordTextField.layer.borderWidth = 1
             oldPasswordTextField.layer.borderColor = UIColor.red.cgColor
         }
-        updateEncriptButtonStatus()
+        updatePasswordButtonStatus()
     }
 
+    // To-do: Should probilby fail user if spaces are used in the new password.
+    // To-do: Should improve password requirements.
+    // To-do: This code is duplicated in NewPasswordViewController.
     @IBAction func newPasswordTextFieldPressed(_ sender: UITextField) {
-        // Remove leading and trailing whitespaces:
-        // To-do: Should probilby red if spaces detected
+        // Remove leading and trailing whitespaces.
         let newPasswordText = newPasswordTextField.text?.trimmingCharacters(in: .whitespaces)
+        
+        // New password must be at least 8 charactors.
         if newPasswordText?.count ?? 0 < 8 {
             newPasswordPassed = false
             newPasswordTextField.layer.borderWidth = 1
@@ -59,16 +64,18 @@ class SettingsViewController: UIViewController {
             newPasswordTextField.layer.borderWidth = 1
             newPasswordTextField.layer.borderColor = UIColor.green.cgColor
         }
+        // Update other parts of the UI to update.
         retypeNewPasswordTextFieldPressed(retypeNewPasswordTextField)
-        updateEncriptButtonStatus()
+        updatePasswordButtonStatus()
     }
 
+    // To-do: This code is duplicated in NewPasswordViewController.
     @IBAction func retypeNewPasswordTextFieldPressed(_ sender: UITextField) {
-        // Remove leading and trailing whitespaces:
-        // To-do: Should probilby red if spaces detected
+        // Remove leading and trailing whitespaces.
         let newPasswordText = newPasswordTextField.text?.trimmingCharacters(in: .whitespaces)
         let retypeNewPasswordText = retypeNewPasswordTextField.text?.trimmingCharacters(in: .whitespaces)
 
+        // Varify new passwords match.
         if newPasswordText != retypeNewPasswordText {
             passwordVirificationPassed = false
             retypeNewPasswordTextField.layer.borderWidth = 1
@@ -84,17 +91,21 @@ class SettingsViewController: UIViewController {
                 passwordFeedbackLabel.text = nil
             }
         }
-//        newPasswordTextFieldPressed(newPasswordTextField)
-        updateEncriptButtonStatus()
+        // Update other parts of the UI to update.
+        updatePasswordButtonStatus()
     }
     
-    @IBAction func encriptButtonPressed(_ sender: GeneralUIButton) {
-        if canChangePassword() == true {
+    // To-do: This code is duplicated in NewPasswordViewController.
+    @IBAction func updatePasswordButtonPressed(_ sender: GeneralUIButton) {
+        // If all requirements for a new password are met.
+        if canChangePassword() {
+            // Update the password.
             let newPassword = newPasswordTextField.text?.trimmingCharacters(in: .whitespaces)
             KeychainWrapper.standard.set(newPassword!, forKey: "Password")
-//            masterPassword = newPassword!
-            encriptButton.isEnabled = false
-            encriptButton.backgroundColor = UIColor.gray
+            
+            // Update The UI.
+            changePasswordButton.isEnabled = false
+            changePasswordButton.backgroundColor = UIColor.gray
             oldPasswordTextField.text = nil
             newPasswordTextField.text = nil
             retypeNewPasswordTextField.text = nil
@@ -105,20 +116,16 @@ class SettingsViewController: UIViewController {
     }
     
     func canChangePassword() -> Bool {
-        if oldPasswordPassed && newPasswordPassed && passwordVirificationPassed {
-            return true
-        } else {
-            return false
-        }
+        (oldPasswordPassed && newPasswordPassed && passwordVirificationPassed) ? true : false
     }
     
-    func updateEncriptButtonStatus() {
+    func updatePasswordButtonStatus() {
         if oldPasswordPassed && newPasswordPassed && passwordVirificationPassed {
-            encriptButton.isEnabled = true
-            encriptButton.backgroundColor = UIColor(named: "Webroot")
+            changePasswordButton.isEnabled = true
+            changePasswordButton.backgroundColor = UIColor(named: "Webroot")
         } else {
-            encriptButton.isEnabled = false
-            encriptButton.backgroundColor = UIColor.gray
+            changePasswordButton.isEnabled = false
+            changePasswordButton.backgroundColor = UIColor.gray
         }
     }
     

@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  AccountViewController.swift
 //  Password Manager
 //
 //  Created by Álvaro Santillan on 12/9/20.
@@ -14,7 +14,7 @@ struct cellData {
     var sectionData = [String]()
 }
 
-//var masterPassword = "password"
+// To-do securly store the table view data.
 var tableViewData = [cellData(opened: false, title: "Amazon", sectionData: ["Username: timApple@icload.com", "Password: aAppleADay"]),
                  cellData(opened: false, title: "B", sectionData: ["A", "B"]),
                  cellData(opened: false, title: "C", sectionData: ["A", "B"]),
@@ -22,7 +22,6 @@ var tableViewData = [cellData(opened: false, title: "Amazon", sectionData: ["Use
 
 class AccountViewController: UITableViewController {
     @IBOutlet weak var newTableView: UITableView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +32,7 @@ class AccountViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableViewData[section].opened == true {
-            return tableViewData[section].sectionData.count + 1
-        } else {
-            return 1
-        }
+        tableViewData[section].opened == true ? tableViewData[section].sectionData.count + 1 : 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,7 +63,6 @@ class AccountViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-//            print(indexPath[0])
             tableViewData.remove(at: indexPath[0])
             newTableView.reloadData()
         }
