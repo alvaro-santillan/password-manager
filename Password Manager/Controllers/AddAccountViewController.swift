@@ -8,7 +8,6 @@
 
 import UIKit
 
-// To-do disable auto segestions in input fields.
 class AddAccountViewController: UIViewController {
     @IBOutlet weak var accountNameTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!

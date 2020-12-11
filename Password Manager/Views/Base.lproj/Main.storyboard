@@ -173,7 +173,7 @@
                                     <constraint firstAttribute="height" constant="35" id="Uxc-ee-HLk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="organization"/>
                                 <connections>
                                     <action selector="accountTextFieldChanged:" destination="kFc-uw-wCj" eventType="editingChanged" id="8kc-zQ-MRw"/>
                                 </connections>
@@ -184,7 +184,7 @@
                                     <constraint firstAttribute="height" constant="35" id="p6D-XO-3OM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                                 <connections>
                                     <action selector="usernameTextFieldChanged:" destination="kFc-uw-wCj" eventType="editingChanged" id="ywh-7m-vjv"/>
                                 </connections>
@@ -209,7 +209,7 @@
                                     <constraint firstAttribute="height" constant="35" id="cwB-e4-1eF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                 <connections>
                                     <action selector="passwordTextFieldChanged:" destination="kFc-uw-wCj" eventType="editingChanged" id="wFU-WR-KDS"/>
                                 </connections>

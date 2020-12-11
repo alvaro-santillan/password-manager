@@ -16,9 +16,9 @@ struct cellData {
 
 // To-do securly store the table view data.
 var tableViewData = [cellData(opened: false, title: "Amazon", sectionData: ["Username: timApple@icload.com", "Password: aAppleADay"]),
-                 cellData(opened: false, title: "B", sectionData: ["A", "B"]),
-                 cellData(opened: false, title: "C", sectionData: ["A", "B"]),
-                 cellData(opened: false, title: "D", sectionData: ["A", "B"])]
+                    cellData(opened: false, title: "Webroot", sectionData: ["Username: joseph@webroot.com", "Password: password"]),
+                    cellData(opened: false, title: "OpenText", sectionData: ["Username: david@opentext.com", "Password: dSdsjkfDHS1334!"]),
+                    cellData(opened: false, title: "Carbonite", sectionData: ["Username: al@carbonite.com", "Password: AlIsTheBestGuy100%"])]
 
 class AccountViewController: UITableViewController {
     @IBOutlet weak var newTableView: UITableView!
