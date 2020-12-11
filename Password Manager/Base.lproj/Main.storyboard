@@ -123,6 +123,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQH-Le-HKM" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
+                                <rect key="frame" x="16" y="24" width="90" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Webroot"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GLu-wA-bMg" kind="show" id="5Ia-Cp-3GY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qqL-ld-QoB"/>
@@ -304,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9S-qr-evF" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
-                                <rect key="frame" x="88" y="533" width="199" height="61"/>
+                                <rect key="frame" x="88" y="487" width="199" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Webroot"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
@@ -333,12 +345,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2n-th-MBk" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
+                                <rect key="frame" x="88" y="556" width="199" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Webroot"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="BIO Unlock">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="bioUnlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="ykh-BL-ob6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2az-E6-A5n"/>
                     </view>
                     <navigationItem key="navigationItem" id="kas-z6-mff"/>
                     <connections>
+                        <outlet property="bioUnlockButton" destination="b2n-th-MBk" id="RDQ-Ff-PoX"/>
                         <outlet property="feedBackLabel" destination="2nw-B9-hxf" id="gYM-1X-vmj"/>
                         <outlet property="passwordEntryTextField" destination="PmO-RT-q95" id="NIC-EV-lGO"/>
                         <outlet property="unlockButton" destination="b9S-qr-evF" id="llQ-9z-z0V"/>
