@@ -48,6 +48,69 @@
             </objects>
             <point key="canvasLocation" x="777" y="0.0"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="Coc-gH-twI">
+            <objects>
+                <viewController id="kFc-uw-wCj" customClass="AddAccountViewController" customModule="Password_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NDS-1s-34z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0C-dT-kF1">
+                                <rect key="frame" x="27" y="45" width="320" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="accountTextFieldChanged:" destination="kFc-uw-wCj" eventType="editingChanged" id="8kc-zQ-MRw"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sue-B0-rNH">
+                                <rect key="frame" x="27" y="82" width="320" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="usernameTextFieldChanged:" destination="kFc-uw-wCj" eventType="editingChanged" id="ywh-7m-vjv"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLq-e9-YdP" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
+                                <rect key="frame" x="88" y="155" width="199" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Webroot"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="Add Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAccountButtonPressed:" destination="kFc-uw-wCj" eventType="touchUpInside" id="cMq-2T-fQq"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ys0-cO-v5G">
+                                <rect key="frame" x="27" y="119" width="320" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="passwordTextFieldChanged:" destination="kFc-uw-wCj" eventType="editingChanged" id="wFU-WR-KDS"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PZA-qx-UDS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="plus" catalog="system" id="FSO-ev-CQs"/>
+                    <connections>
+                        <outlet property="accountNameTextField" destination="q0C-dT-kF1" id="Q5Y-An-oL0"/>
+                        <outlet property="addAccountButton" destination="YLq-e9-YdP" id="B2u-4s-JsI"/>
+                        <outlet property="passwordTextField" destination="ys0-cO-v5G" id="NwQ-lR-AEr"/>
+                        <outlet property="userNameTextField" destination="Sue-B0-rNH" id="eZG-uy-HOT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ouu-OP-dBr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="761"/>
+        </scene>
         <!--New Password View Controller-->
         <scene sceneID="KRJ-Q6-6gk">
             <objects>
@@ -160,78 +223,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhV-hB-EDU">
-                                <rect key="frame" x="27" y="14" width="320" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="accountTextFieldChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="Grp-gp-FVY"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3l-sZ-AVS">
-                                <rect key="frame" x="27" y="51" width="320" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="usernameTextFieldChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="biX-GY-deq"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLx-9B-k1Z" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
-                                <rect key="frame" x="27" y="389" width="320" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Webroot"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <state key="normal" title="Encript Using: XXX">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="QmE-62-JVE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqK-SC-xJH" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
-                                <rect key="frame" x="27" y="458" width="320" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Webroot"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <state key="normal" title="Encript">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="encriptButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="S3O-QA-LSI"/>
-                                    <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="j4Y-0D-J62"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEM-IF-HVt" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
-                                <rect key="frame" x="27" y="525" width="320" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Webroot"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <state key="normal" title="Sign Out">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="signOutButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="OHK-29-czu"/>
-                                    <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="We6-6b-4q4"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acq-Yj-OgZ">
-                                <rect key="frame" x="27" y="186" width="320" height="34"/>
+                                <rect key="frame" x="27" y="40" width="320" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="At least 8 characters." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxB-I5-hfH">
-                                <rect key="frame" x="27" y="354" width="320" height="27"/>
+                                <rect key="frame" x="27" y="208" width="320" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Retype New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcW-QY-KNP">
-                                <rect key="frame" x="27" y="312" width="320" height="34"/>
+                                <rect key="frame" x="27" y="166" width="320" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -240,7 +247,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ln1-Pl-vu2">
-                                <rect key="frame" x="27" y="228" width="320" height="34"/>
+                                <rect key="frame" x="27" y="82" width="320" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -249,7 +256,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zK5-w6-ajA">
-                                <rect key="frame" x="27" y="270" width="320" height="34"/>
+                                <rect key="frame" x="27" y="124" width="320" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -263,43 +270,55 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBe-re-Yae" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
-                                <rect key="frame" x="88" y="124" width="199" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLx-9B-k1Z" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
+                                <rect key="frame" x="27" y="380" width="320" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Webroot"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <state key="normal" title="Add Account">
+                                <state key="normal" title="Encript Using: XXX">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addAccountButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="dUa-ze-GWJ"/>
-                                    <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="UlR-8s-oLs"/>
+                                    <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="QmE-62-JVE"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rS-1w-ZPE">
-                                <rect key="frame" x="27" y="88" width="320" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqK-SC-xJH" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
+                                <rect key="frame" x="27" y="449" width="320" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <color key="backgroundColor" name="Webroot"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="Encript">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="passwordTextFieldChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="87y-r4-hNC"/>
+                                    <action selector="encriptButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="S3O-QA-LSI"/>
+                                    <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="j4Y-0D-J62"/>
                                 </connections>
-                            </textField>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEM-IF-HVt" customClass="GeneralUIButton" customModule="Password_Manager" customModuleProvider="target">
+                                <rect key="frame" x="27" y="516" width="320" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Webroot"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="OHK-29-czu"/>
+                                    <action selector="unlockButtonPressed:" destination="GLu-wA-bMg" eventType="touchUpInside" id="We6-6b-4q4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="accountNameTextField" destination="vhV-hB-EDU" id="6bm-YD-dH6"/>
-                        <outlet property="addAccountButton" destination="YBe-re-Yae" id="LLn-2N-LJG"/>
                         <outlet property="encriptButton" destination="TqK-SC-xJH" id="laT-jQ-th7"/>
                         <outlet property="newPasswordTextField" destination="zK5-w6-ajA" id="bGX-IQ-PCi"/>
                         <outlet property="oldPasswordTextField" destination="ln1-Pl-vu2" id="aSM-hz-15S"/>
                         <outlet property="passwordFeedbackLabel" destination="YxB-I5-hfH" id="YCr-ZA-2Bu"/>
-                        <outlet property="passwordTextField" destination="7rS-1w-ZPE" id="rOu-yg-CcG"/>
                         <outlet property="retypeNewPasswordTextField" destination="YcW-QY-KNP" id="TFx-uk-Pwc"/>
-                        <outlet property="userNameTextField" destination="e3l-sZ-AVS" id="1mS-dC-hpn"/>
                         <segue destination="GLu-wA-bMg" kind="show" identifier="signOutSegue" id="HPf-gl-9sv"/>
                     </connections>
                 </viewController>
@@ -387,6 +406,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="J0A-Jq-mzi" kind="relationship" relationship="viewControllers" id="fSd-ch-urW"/>
+                        <segue destination="kFc-uw-wCj" kind="relationship" relationship="viewControllers" id="gEM-zY-o0V"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
@@ -399,11 +419,12 @@
         <image name="Shield" width="384" height="384"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="lock.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <namedColor name="Webroot">
             <color red="0.13300000131130219" green="0.3529999852180481" blue="0.6589999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fnl-ow-gpw"/>
+        <segue reference="HPf-gl-9sv"/>
     </inferredMetricsTieBreakers>
 </document>

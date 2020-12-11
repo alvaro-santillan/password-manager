@@ -19,6 +19,7 @@
 		38C22FC52582C7510078D8E1 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */; };
 		38C22FC62582C7510078D8E1 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */; };
 		38C22FC82582D0A10078D8E1 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */; };
+		38C22FCA2582F3700078D8E1 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		38C22FC32582C7510078D8E1 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		38C22FC42582C7510078D8E1 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				387C806325804A190021AB8E /* SceneDelegate.swift */,
 				38018C762581BE0B0047E241 /* TableViewController.swift */,
 				387C806725804A190021AB8E /* SecondViewController.swift */,
+				38C22FC92582F3700078D8E1 /* AddAccountViewController.swift */,
 				387C806925804A190021AB8E /* Main.storyboard */,
 				38C22FC72582D0A10078D8E1 /* NewPasswordViewController.swift */,
 				387C8079258069130021AB8E /* CustomUI.swift */,
@@ -158,6 +161,7 @@
 			files = (
 				387C806825804A190021AB8E /* SecondViewController.swift in Sources */,
 				38018C772581BE0B0047E241 /* TableViewController.swift in Sources */,
+				38C22FCA2582F3700078D8E1 /* AddAccountViewController.swift in Sources */,
 				387C806225804A190021AB8E /* AppDelegate.swift in Sources */,
 				38C22FC52582C7510078D8E1 /* KeychainWrapper.swift in Sources */,
 				387C8078258058490021AB8E /* LoginScreenViewController.swift in Sources */,
